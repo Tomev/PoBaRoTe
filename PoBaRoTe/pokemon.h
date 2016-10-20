@@ -2,6 +2,7 @@
 #define POBAROTE_POKEMON_H
 
 #include <string>
+
 using namespace std;
 
 enum types
@@ -13,8 +14,8 @@ enum types
 class pokemon
 {
 public:
-	pokemon(int number, string name, int generation, int type1, int type2, bool hasEvolution,	bool hasMegaEvolution,
-					bool hasAlolaForm);
+	pokemon(int number, string name, int generation, int type1, int type2, vector<unsigned short int> additionalTypes,
+	        bool isLegendary, bool hasEvolution, bool hasMegaEvolution, bool hasAlolaForm);
 	string getInfo();
 private:
 	int number;
@@ -22,14 +23,12 @@ private:
 
 	string name;
 
-	int type1;
-	int type2;
+	vector<unsigned short int> additionalTypes;
 
+	bool isLegendary;
 	bool hasEvolution;
 	bool hasMegaEvolution;
 	bool hasAlolaForm;
-
-
 };
 
 
