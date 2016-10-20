@@ -11,24 +11,42 @@ enum types
 	STEEL, WATER
 };
 
+#define NONE -1
+
 class pokemon
 {
 public:
-	pokemon(int number, string name, int generation, int type1, int type2, vector<unsigned short int> additionalTypes,
-	        bool isLegendary, bool hasEvolution, bool hasMegaEvolution, bool hasAlolaForm);
+	pokemon(unsigned short number, string name, unsigned short generation, unsigned short type1, int type2,
+	        vector<unsigned short int> additionalTypes, bool isLegendary, bool hasPreevolution, bool hasEvolution,
+	        bool hasMegaEvolution, bool hasAlolaForm);
+
+	pokemon(unsigned short number, string name, unsigned short generation, unsigned short type1, int type2,
+	        vector<unsigned short int> additionalTypes);
+
 	string getInfo();
+
+	void setIsLegendary(bool flag);
+	void setHasPreevolution(bool flag);
+	void setHasEvolution(bool flag);
+	void setHasMegaEvolution(bool flag);
+	void setHasAlolaForm(bool flag);
+
 private:
-	int number;
-	int generation;
+	unsigned short int number;
+	unsigned short int generation;
 
 	string name;
 
+	short int type1;
+	short int type2;
+
 	vector<unsigned short int> additionalTypes;
 
-	bool isLegendary;
-	bool hasEvolution;
-	bool hasMegaEvolution;
-	bool hasAlolaForm;
+	bool isLegendary = false;
+	bool hasPreevolution = false;
+	bool hasEvolution = false;
+	bool hasMegaEvolution = false;
+	bool hasAlolaForm = false;
 };
 
 
